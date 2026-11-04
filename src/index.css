@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Onest', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Azeret Mono', ui-monospace, SFMono-Regular, monospace;
+  
+  /* Primary Forest Green Palette (Bisque Reference) */
+  --color-forest: #0F3B2E;
+  --color-forest-dark: #0A2C22;
+  --color-forest-hover: #16483A;
+  --color-forest-light: #1A5241;
+  
+  /* Sage & Mint Accents */
+  --color-mint: #DDF1E3;
+  --color-mint-border: #B8E3C6;
+  --color-emerald: #2F9E6A;
+  
+  /* Surfaces & Paper Tones */
+  --color-paper: #F7F5EE;
+  --color-card-white: #FFFFFF;
+  --color-sand: #EFECE3;
+  --color-sand-dark: #E4DFC6;
+  
+  /* Text & Ink */
+  --color-ink: #111816;
+  --color-ink-muted: #535C57;
+  --color-ink-faint: #848D88;
+  
+  /* Warm Subtle Accent */
+  --color-coral: #E06336;
+}
+
+body {
+  background-color: #F7F5EE;
+  color: #111816;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hairline borders matching Framer Bisque */
+.border-hairline {
+  border-color: rgba(15, 59, 46, 0.09);
+}
+
+.border-subtle {
+  border-color: rgba(15, 59, 46, 0.15);
+}
+
+/* Crisp scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F5EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4CEBF;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #AFA897;
+}
