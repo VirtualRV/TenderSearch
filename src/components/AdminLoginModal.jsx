@@ -70,17 +70,17 @@ export default function AdminLoginModal({
       <div className="bg-white rounded-2xl border border-black/[0.08] shadow-2xl max-w-md w-full overflow-hidden my-auto text-xs font-mono">
         
         {/* Header */}
-        <div className="bg-[#0A2C22] text-[#DDF1E3] p-5 border-b border-[#0F3B2E]">
+        <div className="bg-[#0B1320] text-[#EEF4FF] p-5 border-b border-[#1E293B]">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-[#0F3B2E] border border-[#1A5241] flex items-center justify-center text-white">
-                <Lock className="w-4 h-4 text-[#DDF1E3]" />
+              <div className="w-8 h-8 rounded-lg bg-[#1E293B] border border-[#334155] flex items-center justify-center text-white">
+                <Lock className="w-4 h-4 text-[#93C5FD]" />
               </div>
               <div>
                 <h3 className="font-bold text-sm text-white font-sans">
                   Admin Security Verification
                 </h3>
-                <span className="text-[10px] text-[#DDF1E3]/70 font-mono">
+                <span className="text-[10px] text-[#94A3B8] font-mono">
                   Multi-Admin Role-Based Ingestion Console
                 </span>
               </div>
@@ -88,7 +88,7 @@ export default function AdminLoginModal({
 
             <button
               onClick={onClose}
-              className="p-1 rounded text-[#DDF1E3]/70 hover:text-white"
+              className="p-1 rounded text-[#94A3B8] hover:text-white"
             >
               <X className="w-4 h-4" />
             </button>
@@ -98,13 +98,13 @@ export default function AdminLoginModal({
         {/* Form Body */}
         <div className="p-6 space-y-4">
           
-          <div className="p-3 rounded-xl bg-[#F7F5EE] border border-black/[0.06] text-[11px] text-[#535C57]">
+          <div className="p-3 rounded-xl bg-[#F8F7F4] border border-black/[0.06] text-[11px] text-[#475569]">
             This portal is restricted to authorized administrative personnel. Select an admin account or enter your credentials.
           </div>
 
           {/* Quick Admin Account Selector */}
           <div>
-            <span className="text-[10px] uppercase text-[#848D88] font-bold block mb-1.5">
+            <span className="text-[10px] uppercase text-[#64748B] font-bold block mb-1.5">
               Select Administrator Account
             </span>
             <div className="space-y-1.5">
@@ -115,8 +115,8 @@ export default function AdminLoginModal({
                   onClick={() => handleQuickSelect(acc)}
                   className={`w-full p-2.5 rounded-xl text-left border transition cursor-pointer flex items-center justify-between ${
                     email === acc.email
-                      ? 'bg-[#0F3B2E] text-white border-[#0F3B2E]'
-                      : 'bg-[#F7F5EE] text-[#111816] border-black/[0.06] hover:border-black/20'
+                      ? 'bg-[#0B1320] text-white border-[#0B1320]'
+                      : 'bg-[#F8F7F4] text-[#0F172A] border-black/[0.06] hover:border-black/20'
                   }`}
                 >
                   <div>
@@ -124,7 +124,7 @@ export default function AdminLoginModal({
                     <div className="text-[10px] opacity-75">{acc.role}</div>
                   </div>
                   <span className={`text-[10px] px-2 py-0.5 rounded font-mono ${
-                    email === acc.email ? 'bg-[#1A5241] text-[#DDF1E3]' : 'bg-[#EFECE3] text-[#535C57]'
+                    email === acc.email ? 'bg-[#1E293B] text-[#93C5FD]' : 'bg-[#E2E8F0] text-[#475569]'
                   }`}>
                     {acc.badge}
                   </span>
@@ -143,27 +143,27 @@ export default function AdminLoginModal({
           {/* Credentials Form */}
           <form onSubmit={handleSubmit} className="space-y-3 pt-2 border-t border-black/[0.06]">
             <div>
-              <label className="block text-[10px] uppercase text-[#848D88] font-bold mb-1">
+              <label className="block text-[10px] uppercase text-[#64748B] font-bold mb-1">
                 Admin Work Email
               </label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3 py-2 text-xs rounded-xl bg-[#F7F5EE] border border-black/[0.08] focus:outline-none focus:ring-1 focus:ring-[#0F3B2E]"
+                className="w-full px-3 py-2 text-xs rounded-xl bg-[#F8F7F4] border border-black/[0.08] focus:outline-none focus:ring-1 focus:ring-[#1D4ED8]"
                 required
               />
             </div>
 
             <div>
-              <label className="block text-[10px] uppercase text-[#848D88] font-bold mb-1">
+              <label className="block text-[10px] uppercase text-[#64748B] font-bold mb-1">
                 Security Password / Token
               </label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-3 py-2 text-xs rounded-xl bg-[#F7F5EE] border border-black/[0.08] focus:outline-none focus:ring-1 focus:ring-[#0F3B2E]"
+                className="w-full px-3 py-2 text-xs rounded-xl bg-[#F8F7F4] border border-black/[0.08] focus:outline-none focus:ring-1 focus:ring-[#1D4ED8]"
                 required
               />
             </div>
@@ -171,9 +171,9 @@ export default function AdminLoginModal({
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full mt-2 py-3 rounded-xl bg-[#0F3B2E] hover:bg-[#0A2C22] text-white font-mono text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+              className="w-full mt-2 py-3 rounded-xl bg-[#0B1320] hover:bg-[#1D4ED8] text-white font-mono text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 shadow-sm"
             >
-              <UserCheck className="w-4 h-4 text-[#DDF1E3]" />
+              <UserCheck className="w-4 h-4 text-[#93C5FD]" />
               <span>{isLoading ? 'Verifying Credentials...' : 'Authenticate & Enter Admin Console'}</span>
             </button>
           </form>

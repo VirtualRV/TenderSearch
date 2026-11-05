@@ -23,53 +23,53 @@ export default function HeroSection({
       <div className="max-w-7xl xl:max-w-[1400px] mx-auto">
         
         {/* Bisque Split Rail Header (01) */}
-        <div className="border-t border-black/[0.08] pt-3 pb-8 flex items-center justify-between text-xs font-mono text-[#535C57] tracking-wider uppercase">
+        <div className="border-t border-black/[0.08] pt-3 pb-8 flex items-center justify-between text-xs font-mono text-[#475569] tracking-wider uppercase">
           <div className="flex items-center gap-3">
-            <span className="text-[#111816] font-semibold">(01)</span>
+            <span className="text-[#0F172A] font-semibold">(01)</span>
             <span>TENDER DISCOVERY ENGINE</span>
           </div>
-          <div className="flex items-center gap-1.5 text-[#0F3B2E]">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#2F9E6A]"></span>
+          <div className="flex items-center gap-1.5 text-[#1D4ED8]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse"></span>
             <span>LIVE GEM & CPPP SYNC</span>
           </div>
         </div>
 
         {/* Hero Headline */}
         <div className="max-w-4xl mb-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111816] tracking-tight leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0F172A] tracking-tight leading-[1.1]">
             Indian Government Tenders.
-            <span className="block text-[#0F3B2E] font-medium mt-1">
+            <span className="block text-[#1D4ED8] font-medium mt-1">
               Live GeM Opportunities.
             </span>
           </h1>
 
-          <p className="mt-4 text-base sm:text-lg text-[#535C57] leading-relaxed max-w-3xl">
+          <p className="mt-4 text-base sm:text-lg text-[#475569] leading-relaxed max-w-3xl">
             Search 50,000+ active central and state government biddings with zero paywalls. Download official tender documents, verify MSME exemptions, and generate bid undertakings for free.
           </p>
         </div>
 
-        {/* Clean Wide Omnibar Search Box (Modeled on Bidhelp) */}
+        {/* Clean Wide Omnibar Search Box */}
         <div className="bg-white rounded-2xl p-4 sm:p-6 border border-black/[0.08] shadow-xs">
           
           {/* Main Input Row */}
           <div className="relative flex items-center">
-            <Search className="absolute left-4 w-4 h-4 text-[#848D88]" />
+            <Search className="absolute left-4 w-4 h-4 text-[#94A3B8]" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by Item (e.g. Laptops, Solar, Security), Ministry, or GeM Bid Number..."
-              className="w-full pl-11 pr-24 py-3.5 rounded-xl bg-[#F7F5EE] border border-black/[0.06] text-sm text-[#111816] placeholder-[#848D88] focus:outline-none focus:ring-1 focus:ring-[#0F3B2E] transition"
+              className="w-full pl-11 pr-24 py-3.5 rounded-xl bg-[#F8F7F4] border border-black/[0.06] text-sm text-[#0F172A] placeholder-[#94A3B8] focus:outline-none focus:ring-1 focus:ring-[#1D4ED8] transition"
             />
             {searchQuery ? (
               <button 
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 p-1.5 text-xs text-[#535C57] hover:text-black cursor-pointer"
+                className="absolute right-3 p-1.5 text-xs text-[#475569] hover:text-[#0F172A] cursor-pointer"
               >
                 <X className="w-4 h-4" />
               </button>
             ) : (
-              <span className="absolute right-3 hidden sm:inline-block text-[11px] font-mono text-[#848D88] bg-white px-2 py-1 rounded border border-black/5">
+              <span className="absolute right-3 hidden sm:inline-block text-[11px] font-mono text-[#94A3B8] bg-white px-2 py-1 rounded border border-black/5">
                 Press Enter
               </span>
             )}
@@ -83,7 +83,7 @@ export default function HeroSection({
               <select
                 value={selectedState}
                 onChange={(e) => setSelectedState(e.target.value)}
-                className="w-full px-3 py-2.5 rounded-xl bg-[#F7F5EE] border border-black/[0.06] text-xs font-mono text-[#111816] focus:outline-none focus:ring-1 focus:ring-[#0F3B2E] cursor-pointer"
+                className="w-full px-3 py-2.5 rounded-xl bg-[#F8F7F4] border border-black/[0.06] text-xs font-mono text-[#0F172A] focus:outline-none focus:ring-1 focus:ring-[#1D4ED8] cursor-pointer"
               >
                 <option value="">All States & UTs (28)</option>
                 {indianStates.map((st) => (
@@ -99,7 +99,7 @@ export default function HeroSection({
               <select
                 value={selectedMinistry}
                 onChange={(e) => setSelectedMinistry(e.target.value)}
-                className="w-full px-3 py-2.5 rounded-xl bg-[#F7F5EE] border border-black/[0.06] text-xs font-mono text-[#111816] focus:outline-none focus:ring-1 focus:ring-[#0F3B2E] cursor-pointer"
+                className="w-full px-3 py-2.5 rounded-xl bg-[#F8F7F4] border border-black/[0.06] text-xs font-mono text-[#0F172A] focus:outline-none focus:ring-1 focus:ring-[#1D4ED8] cursor-pointer"
               >
                 <option value="">All Central Ministries</option>
                 {keyMinistries.map((min) => (
@@ -115,7 +115,7 @@ export default function HeroSection({
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full px-3 py-2.5 rounded-xl bg-[#F7F5EE] border border-black/[0.06] text-xs font-mono text-[#111816] focus:outline-none focus:ring-1 focus:ring-[#0F3B2E] cursor-pointer"
+                className="w-full px-3 py-2.5 rounded-xl bg-[#F8F7F4] border border-black/[0.06] text-xs font-mono text-[#0F172A] focus:outline-none focus:ring-1 focus:ring-[#1D4ED8] cursor-pointer"
               >
                 <option value="All">All Categories (Goods, Services, Works)</option>
                 <option value="Products">Products / Goods Only</option>
@@ -133,8 +133,8 @@ export default function HeroSection({
                 onClick={() => setMsmeOnly(!msmeOnly)}
                 className={`px-3 py-1 rounded-full text-[11px] transition cursor-pointer flex items-center gap-1.5 ${
                   msmeOnly
-                    ? 'bg-[#0F3B2E] text-white'
-                    : 'bg-[#F7F5EE] text-[#535C57] hover:bg-[#EFECE3] border border-black/[0.06]'
+                    ? 'bg-[#0B1320] text-white shadow-xs'
+                    : 'bg-[#F8F7F4] text-[#475569] hover:bg-[#EFECE6] border border-black/[0.06]'
                 }`}
               >
                 <span>🛡️</span>
@@ -145,8 +145,8 @@ export default function HeroSection({
                 onClick={() => setClosingSoonOnly(!closingSoonOnly)}
                 className={`px-3 py-1 rounded-full text-[11px] transition cursor-pointer flex items-center gap-1.5 ${
                   closingSoonOnly
-                    ? 'bg-[#0F3B2E] text-white'
-                    : 'bg-[#F7F5EE] text-[#535C57] hover:bg-[#EFECE3] border border-black/[0.06]'
+                    ? 'bg-[#B45309] text-white shadow-xs'
+                    : 'bg-[#F8F7F4] text-[#475569] hover:bg-[#EFECE6] border border-black/[0.06]'
                 }`}
               >
                 <span>⏰</span>
@@ -156,15 +156,15 @@ export default function HeroSection({
               {(searchQuery || selectedState || selectedMinistry || selectedCategory !== 'All' || msmeOnly || closingSoonOnly) && (
                 <button
                   onClick={onResetFilters}
-                  className="text-[11px] text-[#535C57] underline hover:text-[#111816] ml-2 cursor-pointer"
+                  className="text-[11px] text-[#1D4ED8] underline hover:text-[#0F172A] ml-2 cursor-pointer font-semibold"
                 >
                   Clear filters
                 </button>
               )}
             </div>
 
-            <div className="font-mono text-[11px] text-[#535C57]">
-              Showing <span className="font-bold text-[#111816]">{totalResultsCount}</span> active tenders
+            <div className="font-mono text-[11px] text-[#475569]">
+              Showing <span className="font-bold text-[#0F172A]">{totalResultsCount}</span> active tenders
             </div>
           </div>
 

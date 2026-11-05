@@ -32,12 +32,12 @@ export default function TendersFeed({
       <div className="max-w-7xl xl:max-w-[1400px] mx-auto">
         
         {/* Bisque Split Rail Header (03) */}
-        <div className="border-t border-black/[0.08] pt-3 pb-8 flex items-center justify-between text-xs font-mono text-[#535C57] tracking-wider uppercase">
+        <div className="border-t border-black/[0.08] pt-3 pb-8 flex items-center justify-between text-xs font-mono text-[#475569] tracking-wider uppercase">
           <div className="flex items-center gap-3">
-            <span className="text-[#111816] font-semibold">(03)</span>
+            <span className="text-[#0F172A] font-semibold">(03)</span>
             <span>LIVE OPPORTUNITY RADAR</span>
           </div>
-          <div className="text-right text-[#535C57]">
+          <div className="text-right text-[#475569]">
             {filteredTenders.length} active opportunities found
           </div>
         </div>
@@ -45,39 +45,39 @@ export default function TendersFeed({
         {/* Section Headline & Tab Filter */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111816] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
               Live Central & State Tenders
             </h2>
-            <p className="text-xs sm:text-sm text-[#535C57] mt-1">
+            <p className="text-xs sm:text-sm text-[#475569] mt-1">
               Real-time bids aggregated directly from GeM and state procurement authorities.
             </p>
           </div>
 
           <div className="flex items-center gap-2 self-start sm:self-auto">
             {/* View Switcher */}
-            <div className="hidden sm:flex items-center bg-[#EFECE3] p-1 rounded-xl border border-black/[0.06]">
+            <div className="hidden sm:flex items-center bg-[#EFECE6] p-1 rounded-xl border border-black/[0.06]">
               <button
                 onClick={() => setViewMode('LIST')}
                 className={`p-1.5 rounded-lg transition cursor-pointer ${
-                  viewMode === 'LIST' ? 'bg-white text-[#111816] shadow-xs' : 'text-[#535C57]'
+                  viewMode === 'LIST' ? 'bg-white text-[#0F172A] shadow-xs' : 'text-[#475569]'
                 }`}
-                title="List View (Bidhelp clean style)"
+                title="List View"
               >
                 <LayoutList className="w-3.5 h-3.5" />
               </button>
               <button
                 onClick={() => setViewMode('GRID')}
                 className={`p-1.5 rounded-lg transition cursor-pointer ${
-                  viewMode === 'GRID' ? 'bg-white text-[#111816] shadow-xs' : 'text-[#535C57]'
+                  viewMode === 'GRID' ? 'bg-white text-[#0F172A] shadow-xs' : 'text-[#475569]'
                 }`}
-                title="Grid View (3-column)"
+                title="Grid View"
               >
                 <LayoutGrid className="w-3.5 h-3.5" />
               </button>
             </div>
 
             {/* Filter Tabs */}
-            <div className="flex flex-wrap items-center gap-1 bg-[#EFECE3] p-1 rounded-xl border border-black/[0.06]">
+            <div className="flex flex-wrap items-center gap-1 bg-[#EFECE6] p-1 rounded-xl border border-black/[0.06]">
               {[
                 { id: 'ALL', label: 'All Bids' },
                 { id: 'CENTRAL', label: 'Central Ministries' },
@@ -89,8 +89,8 @@ export default function TendersFeed({
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-3 py-1 rounded-lg text-xs font-mono font-medium transition cursor-pointer ${
                     activeTab === tab.id
-                      ? 'bg-white text-[#111816] shadow-2xs'
-                      : 'text-[#535C57] hover:text-[#111816]'
+                      ? 'bg-white text-[#0F172A] shadow-2xs font-semibold'
+                      : 'text-[#475569] hover:text-[#0F172A]'
                   }`}
                 >
                   {tab.label}
@@ -103,10 +103,10 @@ export default function TendersFeed({
         {/* Tenders Listing */}
         {filteredTenders.length === 0 ? (
           <div className="bg-white rounded-2xl p-12 text-center border border-black/[0.08]">
-            <p className="text-sm text-[#535C57]">No tenders match the chosen filters. Try clearing your search filters above.</p>
+            <p className="text-sm text-[#475569]">No tenders match the chosen filters. Try clearing your search filters above.</p>
           </div>
         ) : viewMode === 'LIST' ? (
-          /* Ultra-Clean Structured List View (Spacious & Responsive) */
+          /* Ultra-Clean Structured List View */
           <div className="space-y-3">
             {filteredTenders.map(tender => {
               const isBookmarked = bookmarkedIds.includes(tender.id);
@@ -115,35 +115,35 @@ export default function TendersFeed({
                 <div
                   key={tender.id}
                   onClick={() => onSelectTender(tender)}
-                  className="bg-white rounded-2xl p-4 sm:p-5 border border-black/[0.08] hover:border-[#0F3B2E] transition-all hover:shadow-xs cursor-pointer group flex flex-col lg:flex-row lg:items-center justify-between gap-4"
+                  className="bg-white rounded-2xl p-4 sm:p-5 border border-black/[0.08] hover:border-[#1D4ED8] transition-all hover:shadow-xs cursor-pointer group flex flex-col lg:flex-row lg:items-center justify-between gap-4"
                 >
                   {/* Left Column: Metadata & Title */}
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2 mb-1.5 text-xs font-mono">
-                      <span className="font-semibold text-[#111816]">
+                      <span className="font-semibold text-[#0F172A]">
                         {tender.bidNumber}
                       </span>
-                      <span className="text-[#848D88]">•</span>
-                      <span className="text-[#535C57]">
+                      <span className="text-[#94A3B8]">•</span>
+                      <span className="text-[#475569]">
                         {tender.department}
                       </span>
-                      <span className="text-[#848D88]">•</span>
-                      <span className="text-[#535C57] flex items-center gap-1">
-                        <MapPin className="w-3 h-3 text-[#0F3B2E]" />
+                      <span className="text-[#94A3B8]">•</span>
+                      <span className="text-[#475569] flex items-center gap-1">
+                        <MapPin className="w-3 h-3 text-[#1D4ED8]" />
                         {tender.city}, {tender.state}
                       </span>
                     </div>
 
-                    <h3 className="text-sm sm:text-base font-bold text-[#111816] group-hover:text-[#0F3B2E] transition leading-snug line-clamp-2">
+                    <h3 className="text-sm sm:text-base font-bold text-[#0F172A] group-hover:text-[#1D4ED8] transition leading-snug line-clamp-2">
                       {tender.title}
                     </h3>
 
-                    <div className="flex items-center gap-2 mt-2 text-[11px] font-mono text-[#535C57]">
-                      <span className="bg-[#F7F5EE] px-2 py-0.5 rounded border border-black/5">
+                    <div className="flex items-center gap-2 mt-2 text-[11px] font-mono text-[#475569]">
+                      <span className="bg-[#F8F7F4] px-2 py-0.5 rounded border border-black/5">
                         {tender.category}
                       </span>
                       {tender.msmeExempted && (
-                        <span className="bg-[#DDF1E3] text-[#0F3B2E] px-2 py-0.5 rounded font-medium">
+                        <span className="bg-[#EEF4FF] text-[#1D4ED8] border border-[#BFDBFE] px-2 py-0.5 rounded font-medium">
                           MSME EMD Exempted
                         </span>
                       )}
@@ -154,11 +154,11 @@ export default function TendersFeed({
                   <div className="flex items-center justify-between lg:justify-end gap-6 shrink-0 pt-3 lg:pt-0 border-t lg:border-t-0 border-black/5">
                     
                     <div className="text-left lg:text-right font-mono">
-                      <div className="text-base sm:text-lg font-extrabold text-[#111816]">
+                      <div className="text-base sm:text-lg font-extrabold text-[#0F172A]">
                         {tender.valueDisplay}
                       </div>
                       <div className={`text-[11px] flex items-center lg:justify-end gap-1 ${
-                        tender.hoursRemaining <= 48 ? 'text-[#E06336] font-semibold' : 'text-[#535C57]'
+                        tender.hoursRemaining <= 48 ? 'text-[#D97706] font-semibold' : 'text-[#475569]'
                       }`}>
                         <Clock className="w-3 h-3" />
                         <span>{tender.hoursRemaining <= 48 ? `${tender.hoursRemaining}h remaining` : `${Math.round(tender.hoursRemaining / 24)} days left`}</span>
@@ -171,26 +171,26 @@ export default function TendersFeed({
                           e.stopPropagation();
                           onOpenDocCreatorForTender(tender);
                         }}
-                        className="p-2 rounded-xl border border-black/10 bg-[#F7F5EE] text-[#535C57] hover:text-[#111816] hover:bg-[#EFECE3] transition cursor-pointer"
+                        className="p-2 rounded-xl border border-black/10 bg-[#F8F7F4] text-[#475569] hover:text-[#0F172A] hover:bg-[#EFECE6] transition cursor-pointer"
                         title="Make Bid Documents"
                       >
-                        <FileText className="w-4 h-4 text-[#0F3B2E]" />
+                        <FileText className="w-4 h-4 text-[#1D4ED8]" />
                       </button>
 
                       <button
                         onClick={(e) => toggleBookmark(tender.id, e)}
-                        className="p-2 rounded-xl border border-black/10 bg-[#F7F5EE] text-[#535C57] hover:text-[#111816] hover:bg-[#EFECE3] transition cursor-pointer"
+                        className="p-2 rounded-xl border border-black/10 bg-[#F8F7F4] text-[#475569] hover:text-[#0F172A] hover:bg-[#EFECE6] transition cursor-pointer"
                         title="Save Bid"
                       >
-                        <Bookmark className={`w-4 h-4 ${isBookmarked ? 'fill-[#0F3B2E] text-[#0F3B2E]' : ''}`} />
+                        <Bookmark className={`w-4 h-4 ${isBookmarked ? 'fill-[#1D4ED8] text-[#1D4ED8]' : ''}`} />
                       </button>
 
                       <button
                         onClick={() => onSelectTender(tender)}
-                        className="px-3.5 py-2 rounded-xl bg-[#0F3B2E] text-white hover:bg-[#0A2C22] text-xs font-mono font-medium transition flex items-center gap-1 cursor-pointer"
+                        className="px-3.5 py-2 rounded-xl bg-[#0B1320] text-white hover:bg-[#1E293B] text-xs font-mono font-medium transition flex items-center gap-1 cursor-pointer shadow-xs"
                       >
                         <span>BOQ</span>
-                        <ArrowUpRight className="w-3 h-3" />
+                        <ArrowUpRight className="w-3 h-3 text-[#38BDF8]" />
                       </button>
                     </div>
 
@@ -207,36 +207,36 @@ export default function TendersFeed({
               <div
                 key={tender.id}
                 onClick={() => onSelectTender(tender)}
-                className="bg-white rounded-2xl p-5 border border-black/[0.08] hover:border-[#0F3B2E] transition-all hover:shadow-xs cursor-pointer group flex flex-col justify-between"
+                className="bg-white rounded-2xl p-5 border border-black/[0.08] hover:border-[#1D4ED8] transition-all hover:shadow-xs cursor-pointer group flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between text-xs font-mono text-[#535C57] pb-3 border-b border-black/5 mb-3">
-                    <span className="font-semibold text-[#111816]">{tender.bidNumber}</span>
-                    <span className={`text-[10px] px-2 py-0.5 rounded ${
-                      tender.hoursRemaining <= 48 ? 'bg-[#FFE4D4] text-[#E06336]' : 'bg-[#DDF1E3] text-[#0F3B2E]'
+                  <div className="flex items-center justify-between text-xs font-mono text-[#475569] pb-3 border-b border-black/5 mb-3">
+                    <span className="font-semibold text-[#0F172A]">{tender.bidNumber}</span>
+                    <span className={`text-[10px] px-2 py-0.5 rounded font-semibold ${
+                      tender.hoursRemaining <= 48 ? 'bg-[#FEF3C7] text-[#B45309]' : 'bg-[#EEF4FF] text-[#1D4ED8]'
                     }`}>
                       {tender.hoursRemaining}h left
                     </span>
                   </div>
 
-                  <h3 className="font-bold text-sm text-[#111816] group-hover:text-[#0F3B2E] transition leading-snug line-clamp-2">
+                  <h3 className="font-bold text-sm text-[#0F172A] group-hover:text-[#1D4ED8] transition leading-snug line-clamp-2">
                     {tender.title}
                   </h3>
 
-                  <div className="mt-2 text-xs text-[#535C57] font-mono">
+                  <div className="mt-2 text-xs text-[#475569] font-mono">
                     {tender.department} • {tender.city}
                   </div>
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-black/5 flex items-center justify-between font-mono">
                   <div>
-                    <span className="text-[10px] text-[#848D88] block">Value</span>
-                    <span className="text-sm font-extrabold text-[#111816]">{tender.valueDisplay}</span>
+                    <span className="text-[10px] text-[#64748B] block">Value</span>
+                    <span className="text-sm font-extrabold text-[#0F172A]">{tender.valueDisplay}</span>
                   </div>
 
                   <button
                     onClick={() => onSelectTender(tender)}
-                    className="px-3 py-1.5 rounded-lg bg-[#0F3B2E] text-white text-xs font-medium"
+                    className="px-3 py-1.5 rounded-lg bg-[#0B1320] text-white hover:bg-[#1E293B] text-xs font-medium"
                   >
                     Details
                   </button>

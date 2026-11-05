@@ -48,7 +48,7 @@ export async function processRazorpayCheckout({
       contact: customer.contact
     },
     theme: {
-      color: "#0F3B2E" // Forest Green branding
+      color: "#0B1320" // Midnight Obsidian branding
     },
     handler: function (response) {
       // Payment Successful Callback

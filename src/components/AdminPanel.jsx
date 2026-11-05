@@ -165,37 +165,37 @@ export default function AdminPanel({
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F5EE] text-[#111816] font-sans pb-24">
+    <div className="min-h-screen bg-[#F8F7F4] text-[#0F172A] font-sans pb-24">
       
       {/* Admin Top Navigation */}
-      <div className="bg-[#0A2C22] text-[#DDF1E3] px-4 sm:px-6 py-3.5 border-b border-[#0F3B2E]">
+      <div className="bg-[#0B1320] text-[#EEF4FF] px-4 sm:px-6 py-3.5 border-b border-[#1E293B]">
         <div className="max-w-7xl xl:max-w-[1400px] mx-auto flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <button
               onClick={onCloseAdmin}
-              className="p-1.5 rounded-lg bg-[#0F3B2E] text-white hover:bg-[#16483A] transition flex items-center gap-1.5 text-xs font-mono cursor-pointer"
+              className="p-1.5 rounded-lg bg-[#1E293B] text-white hover:bg-[#334155] transition flex items-center gap-1.5 text-xs font-mono cursor-pointer"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Public Site</span>
             </button>
-            <div className="h-4 w-px bg-[#1A5241]"></div>
-            <span className="font-mono text-xs text-[#DDF1E3] tracking-wide font-bold">
+            <div className="h-4 w-px bg-[#334155]"></div>
+            <span className="font-mono text-xs text-[#EEF4FF] tracking-wide font-bold">
               TENDERSEARCH MULTI-ADMIN CONSOLE
             </span>
           </div>
 
           <div className="flex items-center gap-4 text-xs font-mono">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#2F9E6A]"></span>
+              <span className="w-2 h-2 rounded-full bg-[#60A5FA]"></span>
               <span className="text-white font-medium">{currentAdmin.name}</span>
-              <span className="text-[10px] bg-[#1A5241] text-[#DDF1E3] px-2 py-0.5 rounded font-semibold">
+              <span className="text-[10px] bg-[#1E293B] text-[#93C5FD] px-2 py-0.5 rounded font-semibold">
                 {currentAdmin.role}
               </span>
             </div>
 
             <button
               onClick={onLogoutAdmin}
-              className="text-[#DDF1E3]/70 hover:text-white flex items-center gap-1 cursor-pointer transition text-[11px]"
+              className="text-[#94A3B8] hover:text-white flex items-center gap-1 cursor-pointer transition text-[11px]"
               title="Sign Out of Admin Console"
             >
               <LogOut className="w-3 h-3" />
@@ -214,8 +214,8 @@ export default function AdminPanel({
               onClick={() => setActiveTab('TENDERS')}
               className={`px-4 py-2 rounded-xl transition cursor-pointer font-semibold ${
                 activeTab === 'TENDERS'
-                  ? 'bg-[#0F3B2E] text-white shadow-xs'
-                  : 'bg-white text-[#535C57] hover:text-[#111816]'
+                  ? 'bg-[#0B1320] text-white shadow-xs'
+                  : 'bg-white text-[#475569] hover:text-[#0F172A]'
               }`}
             >
               GeM Ingestion & Tenders ({tenders.length})
@@ -225,8 +225,8 @@ export default function AdminPanel({
               onClick={() => setActiveTab('TEAM')}
               className={`px-4 py-2 rounded-xl transition cursor-pointer font-semibold flex items-center gap-1.5 ${
                 activeTab === 'TEAM'
-                  ? 'bg-[#0F3B2E] text-white shadow-xs'
-                  : 'bg-white text-[#535C57] hover:text-[#111816]'
+                  ? 'bg-[#0B1320] text-white shadow-xs'
+                  : 'bg-white text-[#475569] hover:text-[#0F172A]'
               }`}
             >
               <Users className="w-3.5 h-3.5" />
@@ -234,7 +234,7 @@ export default function AdminPanel({
             </button>
           </div>
 
-          <div className="text-right text-xs font-mono text-[#535C57]">
+          <div className="text-right text-xs font-mono text-[#64748B]">
             Role-Based Multi-Admin System
           </div>
         </div>
@@ -244,15 +244,15 @@ export default function AdminPanel({
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <div>
-                <h2 className="text-2xl font-bold text-[#111816]">Administrator Team & Permissions</h2>
-                <p className="text-xs text-[#535C57] mt-0.5">
+                <h2 className="text-2xl font-bold text-[#0F172A]">Administrator Team & Permissions</h2>
+                <p className="text-xs text-[#475569] mt-0.5">
                   Manage multiple team members who have authority to scrape, review, and make biddings live.
                 </p>
               </div>
 
               <button
                 onClick={() => setShowInviteModal(true)}
-                className="px-4 py-2.5 rounded-xl bg-[#0F3B2E] text-white hover:bg-[#0A2C22] text-xs font-mono font-medium transition flex items-center gap-1.5 cursor-pointer shadow-xs"
+                className="px-4 py-2.5 rounded-xl bg-[#0B1320] text-white hover:bg-[#1D4ED8] text-xs font-mono font-medium transition flex items-center gap-1.5 cursor-pointer shadow-xs"
               >
                 <UserPlus className="w-3.5 h-3.5" />
                 <span>Invite New Admin</span>
@@ -264,21 +264,21 @@ export default function AdminPanel({
                 <div key={member.id} className="bg-white rounded-2xl p-5 border border-black/[0.08] shadow-xs space-y-3 font-mono">
                   <div className="flex items-start justify-between">
                     <div>
-                      <h4 className="font-sans font-bold text-sm text-[#111816]">{member.name}</h4>
-                      <div className="text-[11px] text-[#535C57]">{member.email}</div>
+                      <h4 className="font-sans font-bold text-sm text-[#0F172A]">{member.name}</h4>
+                      <div className="text-[11px] text-[#475569]">{member.email}</div>
                     </div>
-                    <span className="text-[10px] px-2 py-0.5 rounded bg-[#DDF1E3] text-[#0A2C22] font-semibold">
+                    <span className="text-[10px] px-2 py-0.5 rounded bg-[#EEF4FF] text-[#1D4ED8] font-semibold">
                       {member.badge}
                     </span>
                   </div>
 
-                  <div className="pt-2 border-t border-black/[0.06] text-[11px] text-[#535C57]">
+                  <div className="pt-2 border-t border-black/[0.06] text-[11px] text-[#475569]">
                     <strong>Role:</strong> {member.role}
                   </div>
 
-                  <div className="flex items-center justify-between text-[10px] text-[#848D88] pt-1">
+                  <div className="flex items-center justify-between text-[10px] text-[#64748B] pt-1">
                     <span>Status: Active</span>
-                    <span className="text-[#0F3B2E]">● 2FA Enabled</span>
+                    <span className="text-[#1D4ED8]">● 2FA Enabled</span>
                   </div>
                 </div>
               ))}
@@ -290,10 +290,10 @@ export default function AdminPanel({
             {/* Header Actions */}
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
               <div>
-                <h1 className="text-3xl font-extrabold text-[#111816] tracking-tight">
+                <h1 className="text-3xl font-extrabold text-[#0F172A] tracking-tight">
                   Live Tender Ingestion Queue
                 </h1>
-                <p className="text-sm text-[#535C57] mt-1">
+                <p className="text-sm text-[#475569] mt-1">
                   Manage incoming GeM scraped biddings. Toggling a bid live immediately publishes it on the public user screen.
                 </p>
               </div>
@@ -301,16 +301,16 @@ export default function AdminPanel({
               <div className="flex items-center gap-2.5 self-start sm:self-auto">
                 <button
                   onClick={() => setShowAddModal(true)}
-                  className="px-3.5 py-2.5 rounded-xl border border-black/10 bg-white text-[#111816] hover:bg-[#EFECE3] text-xs font-mono font-medium transition flex items-center gap-1.5 cursor-pointer shadow-2xs"
+                  className="px-3.5 py-2.5 rounded-xl border border-black/10 bg-white text-[#0F172A] hover:bg-[#E2E8F0] text-xs font-mono font-medium transition flex items-center gap-1.5 cursor-pointer shadow-2xs"
                 >
-                  <Plus className="w-4 h-4 text-[#0F3B2E]" />
+                  <Plus className="w-4 h-4 text-[#1D4ED8]" />
                   <span>Add Tender</span>
                 </button>
 
                 <button
                   onClick={handleTriggerGeMSync}
                   disabled={isSyncing}
-                  className="px-4 py-2.5 rounded-xl bg-[#0F3B2E] hover:bg-[#0A2C22] text-white text-xs font-mono font-medium transition flex items-center gap-2 cursor-pointer shadow-xs disabled:opacity-50"
+                  className="px-4 py-2.5 rounded-xl bg-[#0B1320] hover:bg-[#1D4ED8] text-white text-xs font-mono font-medium transition flex items-center gap-2 cursor-pointer shadow-xs disabled:opacity-50"
                 >
                   <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? 'animate-spin' : ''}`} />
                   <span>{isSyncing ? 'Scraping GeM...' : 'Sync from GeM Portal'}</span>
@@ -320,8 +320,8 @@ export default function AdminPanel({
 
             {/* Sync Notification */}
             {syncMessage && (
-              <div className="mb-6 p-4 rounded-xl bg-[#DDF1E3] border border-[#B8E3C6] text-[#0A2C22] text-xs font-mono flex items-center gap-2 animate-fadeIn">
-                <CheckCircle2 className="w-4 h-4 text-[#2F9E6A] shrink-0" />
+              <div className="mb-6 p-4 rounded-xl bg-[#EEF4FF] border border-[#BFDBFE] text-[#1E3A8A] text-xs font-mono flex items-center gap-2 animate-fadeIn">
+                <CheckCircle2 className="w-4 h-4 text-[#1D4ED8] shrink-0" />
                 <span>{syncMessage}</span>
               </div>
             )}
@@ -329,27 +329,27 @@ export default function AdminPanel({
             {/* Statistics */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
               <div className="bg-white p-5 rounded-2xl border border-black/[0.08] shadow-xs">
-                <span className="text-[10px] font-mono uppercase text-[#848D88] block">Total In Database</span>
-                <span className="text-3xl font-extrabold font-mono text-[#111816] mt-1 block">{totalBids}</span>
-                <span className="text-[11px] text-[#535C57] font-mono mt-0.5 block">Scraped + Manual</span>
+                <span className="text-[10px] font-mono uppercase text-[#64748B] block">Total In Database</span>
+                <span className="text-3xl font-extrabold font-mono text-[#0F172A] mt-1 block">{totalBids}</span>
+                <span className="text-[11px] text-[#475569] font-mono mt-0.5 block">Scraped + Manual</span>
               </div>
 
               <div className="bg-white p-5 rounded-2xl border border-black/[0.08] shadow-xs">
-                <span className="text-[10px] font-mono uppercase text-[#0F3B2E] font-bold block">Live on Public Site</span>
-                <span className="text-3xl font-extrabold font-mono text-[#0F3B2E] mt-1 block">{liveBids}</span>
-                <span className="text-[11px] text-[#2F9E6A] font-mono mt-0.5 block">Visible to Visitors</span>
+                <span className="text-[10px] font-mono uppercase text-[#1D4ED8] font-bold block">Live on Public Site</span>
+                <span className="text-3xl font-extrabold font-mono text-[#1D4ED8] mt-1 block">{liveBids}</span>
+                <span className="text-[11px] text-[#2563EB] font-mono mt-0.5 block">Visible to Visitors</span>
               </div>
 
               <div className="bg-white p-5 rounded-2xl border border-black/[0.08] shadow-xs">
                 <span className="text-[10px] font-mono uppercase text-[#E06336] font-bold block">Pending Ingestion</span>
                 <span className="text-3xl font-extrabold font-mono text-[#E06336] mt-1 block">{pendingBids}</span>
-                <span className="text-[11px] text-[#535C57] font-mono mt-0.5 block">Awaiting Approval</span>
+                <span className="text-[11px] text-[#475569] font-mono mt-0.5 block">Awaiting Approval</span>
               </div>
 
               <div className="bg-white p-5 rounded-2xl border border-black/[0.08] shadow-xs">
-                <span className="text-[10px] font-mono uppercase text-[#848D88] block">Live Pipeline Value</span>
-                <span className="text-2xl font-extrabold font-mono text-[#111816] mt-1 block">{formattedTotalValue}</span>
-                <span className="text-[11px] text-[#535C57] font-mono mt-0.5 block">Published tenders</span>
+                <span className="text-[10px] font-mono uppercase text-[#64748B] block">Live Pipeline Value</span>
+                <span className="text-2xl font-extrabold font-mono text-[#0F172A] mt-1 block">{formattedTotalValue}</span>
+                <span className="text-[11px] text-[#475569] font-mono mt-0.5 block">Published tenders</span>
               </div>
             </div>
 
@@ -362,11 +362,11 @@ export default function AdminPanel({
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search by Bid No, Title, or Ministry..."
-                  className="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-[#F7F5EE] border border-black/[0.06] text-[#111816] focus:outline-none focus:ring-1 focus:ring-[#0F3B2E]"
+                  className="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-[#F8F7F4] border border-black/[0.06] text-[#0F172A] focus:outline-none focus:ring-1 focus:ring-[#1D4ED8]"
                 />
               </div>
 
-              <div className="flex items-center gap-1 bg-[#EFECE3] p-1 rounded-xl border border-black/[0.06] w-full sm:w-auto">
+              <div className="flex items-center gap-1 bg-[#E2E8F0] p-1 rounded-xl border border-black/[0.06] w-full sm:w-auto">
                 {[
                   { id: 'ALL', label: `All (${totalBids})` },
                   { id: 'LIVE', label: `Live (${liveBids})` },
@@ -376,7 +376,7 @@ export default function AdminPanel({
                     key={tab.id}
                     onClick={() => setFilterStatus(tab.id)}
                     className={`flex-1 sm:flex-none px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium transition cursor-pointer ${
-                      filterStatus === tab.id ? 'bg-white text-[#111816] shadow-2xs' : 'text-[#535C57]'
+                      filterStatus === tab.id ? 'bg-white text-[#0F172A] shadow-2xs' : 'text-[#475569]'
                     }`}
                   >
                     {tab.label}
@@ -389,7 +389,7 @@ export default function AdminPanel({
             <div className="bg-white rounded-2xl border border-black/[0.08] shadow-xs overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs font-mono">
-                  <thead className="bg-[#F7F5EE] border-b border-black/[0.06] text-[#848D88] uppercase tracking-wider text-[10px]">
+                  <thead className="bg-[#F8F7F4] border-b border-black/[0.06] text-[#64748B] uppercase tracking-wider text-[10px]">
                     <tr>
                       <th className="py-3.5 px-4 font-semibold">Bid Reference & Source</th>
                       <th className="py-3.5 px-4 font-semibold">Tender Title & Authority</th>
@@ -401,41 +401,41 @@ export default function AdminPanel({
                   <tbody className="divide-y divide-black/[0.05]">
                     {filteredTenders.length === 0 ? (
                       <tr>
-                        <td colSpan="5" className="py-8 text-center text-[#535C57]">
+                        <td colSpan="5" className="py-8 text-center text-[#475569]">
                           No bids match the filter criteria.
                         </td>
                       </tr>
                     ) : (
                       filteredTenders.map(t => (
-                        <tr key={t.id} className="hover:bg-[#F7F5EE]/60 transition">
+                        <tr key={t.id} className="hover:bg-[#F8F7F4]/60 transition">
                           
                           <td className="py-4 px-4 whitespace-nowrap">
-                            <div className="font-bold text-[#111816]">{t.bidNumber}</div>
+                            <div className="font-bold text-[#0F172A]">{t.bidNumber}</div>
                             <div className="flex items-center gap-1.5 mt-1">
-                              <span className="text-[10px] px-1.5 py-0.2 rounded bg-[#EFECE3] text-[#535C57]">
+                              <span className="text-[10px] px-1.5 py-0.2 rounded bg-[#E2E8F0] text-[#475569]">
                                 {t.source || 'GeM Ingestion'}
                               </span>
-                              <span className="text-[10px] px-1.5 py-0.2 rounded bg-[#F7F5EE] text-[#848D88]">
+                              <span className="text-[10px] px-1.5 py-0.2 rounded bg-[#F8F7F4] text-[#64748B]">
                                 {t.category}
                               </span>
                             </div>
                           </td>
 
                           <td className="py-4 px-4 max-w-md">
-                            <div className="font-sans font-semibold text-[#111816] line-clamp-1">
+                            <div className="font-sans font-semibold text-[#0F172A] line-clamp-1">
                               {t.title}
                             </div>
-                            <div className="text-[11px] text-[#535C57] mt-0.5 truncate">
-                              {t.department} • <span className="text-[#111816]">{t.ministry}</span>
+                            <div className="text-[11px] text-[#475569] mt-0.5 truncate">
+                              {t.department} • <span className="text-[#0F172A]">{t.ministry}</span>
                             </div>
-                            <div className="text-[10px] text-[#848D88] mt-0.5">
+                            <div className="text-[10px] text-[#64748B] mt-0.5">
                               {t.city}, {t.state}
                             </div>
                           </td>
 
                           <td className="py-4 px-4 whitespace-nowrap">
-                            <div className="font-extrabold text-[#111816]">{t.valueDisplay}</div>
-                            <div className="text-[10px] text-[#535C57]">EMD: {t.emdDisplay}</div>
+                            <div className="font-extrabold text-[#0F172A]">{t.valueDisplay}</div>
+                            <div className="text-[10px] text-[#475569]">EMD: {t.emdDisplay}</div>
                           </td>
 
                           {/* Live Toggle */}
@@ -444,7 +444,7 @@ export default function AdminPanel({
                               <button
                                 onClick={() => onToggleLiveStatus(t.id)}
                                 className={`relative inline-flex h-6 w-11 items-center rounded-full transition cursor-pointer ${
-                                  t.isLive ? 'bg-[#0F3B2E]' : 'bg-[#D4CEBF]'
+                                  t.isLive ? 'bg-[#1D4ED8]' : 'bg-[#CBD5E1]'
                                 }`}
                                 title="Click to toggle live visibility on public visitor screen"
                               >
@@ -456,7 +456,7 @@ export default function AdminPanel({
                               </button>
                               
                               <span className={`text-[10px] font-bold ${
-                                t.isLive ? 'text-[#0F3B2E]' : 'text-[#848D88]'
+                                t.isLive ? 'text-[#1D4ED8]' : 'text-[#64748B]'
                               }`}>
                                 {t.isLive ? '● LIVE ON SITE' : 'DRAFT (HIDDEN)'}
                               </span>
@@ -467,7 +467,7 @@ export default function AdminPanel({
                             <div className="flex items-center justify-end gap-1.5">
                               <button
                                 onClick={() => onInspectTender(t)}
-                                className="p-1.5 rounded-lg border border-black/10 hover:bg-[#EFECE3] text-[#535C57] hover:text-[#111816] transition cursor-pointer"
+                                className="p-1.5 rounded-lg border border-black/10 hover:bg-[#E2E8F0] text-[#475569] hover:text-[#0F172A] transition cursor-pointer"
                                 title="View Specs"
                               >
                                 <Eye className="w-3.5 h-3.5" />
@@ -624,7 +624,7 @@ export default function AdminPanel({
                   type="checkbox"
                   checked={makeLiveImmediately}
                   onChange={(e) => setMakeLiveImmediately(e.target.checked)}
-                  className="w-4 h-4 accent-[#0F3B2E]"
+                  className="w-4 h-4 accent-[#1D4ED8]"
                 />
               </div>
 
@@ -632,13 +632,13 @@ export default function AdminPanel({
                 <button
                   type="button"
                   onClick={() => setShowAddModal(false)}
-                  className="px-4 py-2 rounded-xl border border-black/10 bg-[#F7F5EE] text-[#535C57]"
+                  className="px-4 py-2 rounded-xl border border-black/10 bg-[#F8F7F4] text-[#475569] hover:bg-[#E2E8F0] transition cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-xl bg-[#0F3B2E] text-white hover:bg-[#0A2C22]"
+                  className="px-5 py-2 rounded-xl bg-[#0B1320] text-white hover:bg-[#1D4ED8] transition cursor-pointer shadow-xs"
                 >
                   Save Tender
                 </button>
@@ -653,43 +653,43 @@ export default function AdminPanel({
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs">
           <div className="bg-white rounded-2xl border border-black/[0.08] shadow-xl max-w-md w-full p-6 my-auto font-mono text-xs">
             <div className="flex items-center justify-between pb-3 border-b border-black/[0.07] mb-3">
-              <h3 className="font-bold text-sm text-[#111816]">
+              <h3 className="font-bold text-sm text-[#0F172A]">
                 Invite Administrator
               </h3>
-              <button onClick={() => setShowInviteModal(false)}>✕</button>
+              <button onClick={() => setShowInviteModal(false)} className="text-[#64748B] hover:text-black">✕</button>
             </div>
 
             <form onSubmit={handleAddTeamMember} className="space-y-3">
               <div>
-                <label className="block text-[10px] uppercase text-[#848D88] mb-1 font-bold">Full Name</label>
+                <label className="block text-[10px] uppercase text-[#64748B] mb-1 font-bold">Full Name</label>
                 <input
                   type="text"
                   value={inviteName}
                   onChange={(e) => setInviteName(e.target.value)}
                   placeholder="e.g. Priya Nair"
-                  className="w-full px-3 py-2 rounded-lg bg-[#F7F5EE] border border-black/[0.08]"
+                  className="w-full px-3 py-2 rounded-lg bg-[#F8F7F4] border border-black/[0.08]"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase text-[#848D88] mb-1 font-bold">Admin Email</label>
+                <label className="block text-[10px] uppercase text-[#64748B] mb-1 font-bold">Admin Email</label>
                 <input
                   type="email"
                   value={inviteEmail}
                   onChange={(e) => setInviteEmail(e.target.value)}
                   placeholder="e.g. priya@tendersearch.co"
-                  className="w-full px-3 py-2 rounded-lg bg-[#F7F5EE] border border-black/[0.08]"
+                  className="w-full px-3 py-2 rounded-lg bg-[#F8F7F4] border border-black/[0.08]"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-[10px] uppercase text-[#848D88] mb-1 font-bold">Admin Role</label>
+                <label className="block text-[10px] uppercase text-[#64748B] mb-1 font-bold">Admin Role</label>
                 <select
                   value={inviteRole}
                   onChange={(e) => setInviteRole(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg bg-[#F7F5EE] border border-black/[0.08]"
+                  className="w-full px-3 py-2 rounded-lg bg-[#F8F7F4] border border-black/[0.08]"
                 >
                   <option value="Senior Tender Reviewer">Senior Tender Reviewer (Publishing Rights)</option>
                   <option value="GeM Ingestion Specialist">GeM Ingestion Specialist (Scraper Operator)</option>
@@ -701,13 +701,13 @@ export default function AdminPanel({
                 <button
                   type="button"
                   onClick={() => setShowInviteModal(false)}
-                  className="px-3 py-1.5 rounded-lg border border-black/10"
+                  className="px-3 py-1.5 rounded-lg border border-black/10 hover:bg-[#E2E8F0] transition cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-1.5 rounded-lg bg-[#0F3B2E] text-white"
+                  className="px-4 py-1.5 rounded-lg bg-[#0B1320] hover:bg-[#1D4ED8] text-white transition cursor-pointer shadow-xs"
                 >
                   Add Admin Member
                 </button>
